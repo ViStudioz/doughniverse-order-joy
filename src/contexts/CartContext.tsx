@@ -2,6 +2,8 @@ import React, { createContext, useContext, ReactNode } from "react";
 import { useCart, CartItem } from "@/hooks/useCart";
 import { Product } from "@/components/ProductCard";
 
+export type { CartItem };
+
 interface CartContextType {
   cartItems: CartItem[];
   addToCart: (product: Product) => void;
