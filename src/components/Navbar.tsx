@@ -1,11 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { ShoppingCart, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useCart } from "@/hooks/useCart";
+import { useCartContext } from "@/contexts/CartContext";
 
 const Navbar = () => {
   const location = useLocation();
-  const { getCartItemCount } = useCart();
+  const { getCartItemCount } = useCartContext();
   const cartItemCount = getCartItemCount();
 
   return (
