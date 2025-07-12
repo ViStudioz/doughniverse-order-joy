@@ -2,41 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Doughniverse Design System - Warm Pastel Palette
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Doughniverse Brand Colors */
+    --background: 30 100% 97%;  /* Warm cream #FFF5EE */
+    --foreground: 25 20% 20%;   /* Warm dark brown */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;          /* Pure white for cards */
+    --card-foreground: 25 20% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 25 20% 20%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Golden Yellow - Primary Brand Color */
+    --primary: 51 100% 50%;     /* Golden yellow #FFD700 */
+    --primary-foreground: 25 20% 20%;
+    --primary-hover: 350 100% 92%; /* Soft pink #FFE4E1 for hover */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Cream tones for secondary elements */
+    --secondary: 30 100% 97%;   /* Warm cream */
+    --secondary-foreground: 25 20% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 30 50% 95%;        /* Lighter cream */
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 350 100% 92%;     /* Soft pink */
+    --accent-foreground: 25 20% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 20% 90%;       /* Subtle cream border */
+    --input: 30 20% 90%;
+    --ring: 51 100% 50%;        /* Golden yellow focus ring */
 
     --radius: 0.5rem;
+
+    /* Custom Doughniverse Design Tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(51 100% 50%), hsl(30 100% 97%));
+    --gradient-hero: linear-gradient(180deg, hsl(51 100% 50%) 0%, hsl(30 100% 97%) 100%);
+    --shadow-card: 0 4px 20px -2px hsl(51 100% 50% / 0.1);
+    --shadow-button: 0 2px 8px -1px hsl(51 100% 50% / 0.3);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +111,33 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+@layer utilities {
+  /* Doughniverse Custom Classes */
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-button {
+    box-shadow: var(--shadow-button);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .button-hover {
+    @apply transition-smooth hover:bg-accent hover:shadow-button hover:scale-105;
   }
 }
